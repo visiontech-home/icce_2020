@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+
+<title>News</title>
+
+<base target="_parent">
+
+<link rel="stylesheet" href="news_scroll.css" type="text/css">
+
+</head>
+
+<body class="news-scroll" onMouseover="scrollspeed=0" onMouseout="scrollspeed=current" OnLoad="NewsScrollStart();">
+
+
+<!-- START NEWS FEED -->
+<div id="NewsDiv">
+<div class="scroll-text-if">
+
+<!-- SCROLLER CONTENT STARTS HERE -->
+
+
+
+
+
+
+<span class="scroll-title-if">
+Registration Going On<br>
+</span>
+
+Registration going on for Paramedical & Computer Courses 
+
+<a href="news.htm"></a>.
+
+<br><br>
+
+
+
+
+
+
+<span class="scroll-title-if">
+Starting of Classes<br>
+</span>
+
+Classes will be starts soon!! 
+
+<a href="news.htm"></a>.
+
+<br><br>
+
+
+
+
+
+
+<span class="scroll-title-if">
+Holiday List 2019<br>
+</span>
+
+Holiday List of 2019 as per ICCE
+
+<a href="assets/files/holiday.pdf" target="_blank" >Click Here</a>.
+
+<br><br>
+
+
+<span class="scroll-title-if">
+Free WorkShop<br>
+</span>
+
+Free Workshop with Participation Certificate for Computer Hardware & Networking and Security.
+Registration start on 20th March, 2019.
+
+<a href="contact.html" target="_blank" >Contact Now</a>.
+
+<br><br>
+
+
+
+
+
+
+<span class="scroll-title-if">
+Nursing Course<br>
+</span>
+
+Registration Going on Nursing Courses for the of March-April 2019. For more information
+
+<a href="assets/files/nursing.pdf" target="_blank" >Click Here</a>.
+
+<br>
+
+
+
+
+
+
+
+<!-- END SCROLLER CONTENT -->
+
+</div>
+</div>
+<!-- END NEWS FEED -->
+
+
+
+
+<!-- YOU DO NOT NEED TO EDIT BELOW THIS LINE -->
+
+<script type="text/javascript">
+
+
+var startdelay 		= 2; 		// START SCROLLING DELAY IN SECONDS
+var scrollspeed		= 1.1;		// ADJUST SCROLL SPEED
+var scrollwind		= 1;		// FRAME START ADJUST
+var speedjump		= 30;		// ADJUST SCROLL JUMPING = RANGE 20 TO 40
+var nextdelay		= 0; 		// SECOND SCROLL DELAY IN SECONDS 0 = QUICKEST
+var topspace		= "2px";	// TOP SPACING FIRST TIME SCROLLING
+var frameheight		= 210;		// IF YOU RESIZE THE CSS HEIGHT, EDIT THIS HEIGHT TO MATCH
+
+
+current = (scrollspeed);
+
+
+function HeightData(){
+AreaHeight=dataobj.offsetHeight
+if (AreaHeight===0){
+setTimeout("HeightData()",( startdelay * 1000 ))
+}
+else {
+ScrollNewsDiv()
+}}
+
+function NewsScrollStart(){
+dataobj=document.all? document.all.NewsDiv : document.getElementById("NewsDiv")
+dataobj.style.top=topspace
+setTimeout("HeightData()",( startdelay * 1000 ))
+}
+
+function ScrollNewsDiv(){
+dataobj.style.top=scrollwind+'px';
+scrollwind-=scrollspeed;
+if (parseInt(dataobj.style.top)<AreaHeight*(-1)) {
+dataobj.style.top=frameheight+'px';
+scrollwind=frameheight;
+setTimeout("ScrollNewsDiv()",( nextdelay * 1000 ))
+}
+else {
+setTimeout("ScrollNewsDiv()",speedjump)
+}}
+
+
+</script>
+
+
+</body>
+</html>
